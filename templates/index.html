@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Attendance System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 50px;
+        }
+
+        #qrCode {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 50px;
+        }
+
+        p {
+            color: #777;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function updateQRCode() {
+            var img = new Image();
+            img.src = '/qr_image?' + new Date().getTime();
+            document.getElementById('qrCode').src = img.src;
+        }
+
+        setInterval(updateQRCode, 20000);
+    </script>
+</head>
+<body>
+    <h1>QR Attendance System</h1>
+    <img id="qrCode" src="data:image/png;base64,{{ qr_image }}" alt="QR Code">
+    <p>Scan the QR code to mark your attendance.</p>
+</body>
+</html>

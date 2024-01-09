@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Attendance System - Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 50px;
+        }
+
+        form {
+            margin: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        select, input, button {
+            font-size: 16px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>QR Attendance System - Input</h1>
+    <form method="post" action="/input">
+        <label for="subject_name">Subject Name:</label>
+        <select id="subject_name" name="subject_name" required>
+            <option value="WAD">WAD</option>
+            <option value="DSABA">DSBDA</option>
+            <option value="CC">CC</option>
+            <option value="CNS">CNS</option>
+            <option value="CS">CS</option>
+            <!-- Add more subjects as needed -->
+        </select>
+        <br>
+        <label for="time_slot">Time Slot:</label>
+        <select id="time_slot" name="time_slot" required>
+            <option value="11:15 - 12:15">11:15 - 12:15</option>
+            <option value="12:15 - 1:15">12:15 - 1:15</option>
+            <option value="2:00 - 3:00">2:00 - 3:00</option>
+            <option value="3:00 - 4:00">3:00 - 4:00</option>
+            <!-- Add more time slots as needed -->
+        </select>
+        <br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        <br>
+        <button type="submit">Generate QR Code</button>
+    </form>
+</body>
+</html>
